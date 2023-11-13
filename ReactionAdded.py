@@ -51,7 +51,7 @@ class ROLEMANAGING(commands.Cog):
           if not roleid: return
           print("process5 has passed")
           print(roleid.group(1))
-          role = guild.get_role(int(roleid.group(1))) #<==ロールを取得できていない
+          role = guild.get_role(int(roleid.group(1)))
           mention = f"<@{member.id}>"
           if not role: description="役職が存在しないか、見当たりません"
           else:
@@ -70,33 +70,33 @@ class ROLEMANAGING(commands.Cog):
               await action()
             except Exception as e:
               print(e)
-              print("process7-2 has passed") #<-----ここまで行く
+              print("process7-2 has passed")
               description = "役職の設定に失敗しました\n"
               print("section1")
               me = guild.me
-              print("section2")
+              print("section2") #<=====ここまでいく
               if not me.roles[0].manage_role:
                 description += "botに「役職の管理」の権限がないかも？"
-                print("pre-sections1")
+                print("pre-sections1") #<====ここにはいかない
               if bot.top_role.position >= role.position:
                 description += "BOTの一番上の役職よりも高い役職をつけようとしてるかも？"
-                print("pre-sections2")
+                print("pre-sections2") #<====ここにもいかない
               if role.is_default():
                 description += "everyone役職だからかも？"
-                print("pre-sections3")
+                print("pre-sections3") #<====ここにもいかない
               if role.is_bot_managed():
                 description += "特定のbotにしか付与出来な役職だからかも？"
-                print("pre-sections4")
+                print("pre-sections4") #<====ここにもいかない
               if role.is_premium_subscriber():
                 description += "サーバーブースター用の役職だからかも？"
-                print("pre-sections5")
+                print("pre-sections5") #<====ここにもいかない
               else:
                 description += "原因が全然わからん！"
-                print("pre-sections6")
-              print("section 3")
+                print("pre-sections6") #<====ここにもいかない
+              print("section 3") #<====ここにもいかない
 
             try:
-              print("process8 has passed") #<===ここに行かない
+              print("process8 has passed")
               embed = Embed(description=description)
               msg = await channel.send(content=mention,embed=embed)
               await msg.delete(delay=5)
