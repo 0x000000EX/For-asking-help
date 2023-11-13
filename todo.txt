@@ -1,9 +1,1 @@
-process1 has passed
-process2 has passed
-process3 has passed
-🇦:<@&971994449095831592>
-process4 has passed
-process5 has passed
-process8 has passed
-exception occured
-cannot access local variable 'mention' where it is not associated with a value
+質問する内容
