@@ -78,7 +78,7 @@ class ROLEMANAGING(commands.Cog):
               if not me.roles[0].manage_role:
                 description += "botに「役職の管理」の権限がないかも？"
                 print("pre-sections1") #<====ここにはいかない
-              if bot.top_role.position >= role.position:
+              if bot.top_role.position <= role.position:
                 description += "BOTの一番上の役職よりも高い役職をつけようとしてるかも？"
                 print("pre-sections2") #<====ここにもいかない
               if role.is_default():
